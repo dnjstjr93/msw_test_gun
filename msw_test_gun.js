@@ -137,7 +137,7 @@ function addLib() {
       name: ' + mlib_name + ',
       target: 'armv6',
       description: "[name] [portnum] [baudrate]",
-      scripts: './' + mlib_name + ' /dev/ttyUSB4 115200',
+      scripts: './' + mlib_name + ' /dev/ttyUSB3 115200',
       data: ['AIR'],
       control: ['Control_AIR']
     };
@@ -324,7 +324,7 @@ function parseDataMission(topic, str_message) {
 
 function parseControlMission(topic, str_message) {
   try {
-        var topic_arr = topic.split('/');
+         var topic_arr = topic.split('/');
          var _topic = '/MUV/control/' + config.lib[0].name + '/' + topic_arr[topic_arr.length - 1];
          msw_mqtt_client.publish(_topic, str_message);
   }
