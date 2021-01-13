@@ -42,7 +42,7 @@ catch (e) {
 
 config.directory_name = 'lib_sparrow_gun';
 const mlib_name = 'lib_sparrow_gun';
-const mlib_repository_url = 'https://github.com/IoTKETI/lib_sparrow_gun.git';
+const mlib_repository_url = 'http://github.com/IoTKETI/lib_sparrow_gun.git';
 
 try {
   if(fs.existsSync('./' + config.directory_name)) {
@@ -324,7 +324,7 @@ function parseDataMission(topic, str_message) {
 
 function parseControlMission(topic, str_message) {
   try {
-         var topic_arr = topic.split('/');
+        var topic_arr = topic.split('/');
          var _topic = '/MUV/control/' + config.lib[0].name + '/' + topic_arr[topic_arr.length - 1];
          msw_mqtt_client.publish(_topic, str_message);
   }
